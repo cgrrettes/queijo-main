@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="formcadastro.css">
+</head>
+<body>
+    <div class="form-body">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    
+                    <h3>Cadastro</h3>
+                    <p>Preencha os dados abaixo.</p>
+                    <form id="registrationForm" action="./homepage.html" method="GET" novalidate>
+                        <div class="form-group" id="nameGroup">
+                            <label for="name">Nome Completo:</label>
+                            <input id="name" class="form-control" type="text" name="Nome" placeholder="Nome Completo" required aria-required="true">
+                            <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+                        </div>
+                        <div class="form-group" id="emailGroup">
+                            <label for="email">Endereço de E-mail:</label>
+                            <input id="email" class="form-control" type="email" name="email" placeholder="Endereço de E-mail" required aria-required="true">
+                            <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+                        </div>
+                        <div class="form-group" id="positionGroup">
+                            <label for="position">Posição:</label>
+                            <select id="position" class="form-select mt-3" required aria-required="true">
+                                <option value="" disabled selected>Selecione a Posição</option>
+                                <option value="jweb">Desenvolvedor Web Júnior</option>
+                                <option value="sweb">Desenvolvedor Web Sênior</option>
+                                <option value="pmanager">Gerente de Projeto</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor, selecione uma posição.</div>
+                        </div>
+                        <div class="form-check">
+                            <input id="confirm-data" class="form-check-input" type="checkbox" value="" required aria-required="true">
+                            <label for="confirm-data" class="form-check-label">Confirmo que todos os dados estão corretos</label>
+                        </div>
+                        <div class="form-button">
+                            <button type="submit" class="play-button" id="submitButton">Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            var isValid = true;
+
+            // Remove previous validation classes
+            document.querySelectorAll('.form-group').forEach(function(group) {
+                group.classList.remove('invalid');
+            });
+
+            // Get form fields
+            var name = document.getElementById('name');
+            var email = document.getElementById('email');
+            var position = document.getElementById('position');
+            var confirmData = document.getElementById('confirm-data');
+
+            // Validate name
+            if (!name.value.trim()) {
+                document.getElementById('nameGroup').classList.add('invalid');
+                isValid = false;
+            }
+
+            // Validate email
+            if (!email.value.trim() || !email.validity.valid) {
+                document.getElementById('emailGroup').classList.add('invalid');
+                isValid = false;
+            }
+
+            // Validate position
+            if (!position.value) {
+                document.getElementById('positionGroup').classList.add('invalid');
+                isValid = false;
+            }
+
+            // Validate checkbox
+            if (!confirmData.checked) {
+                confirmData.parentElement.classList.add('invalid');
+                isValid = false;
+            }
+
+            // If form is invalid, prevent submission
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700');
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+
+*{
+  font-family: 'Oswald', sans-serif;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+p{
+  color: #767676;
+  line-height:8px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.btn {
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    background-color: #daa37f;
+    border-radius: 0 ;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.banner{
+ background-image: url('https://img.freepik.com/fotos-gratis/mulher-de-frente-a-divertir-se-ao-ar-livre_23-2150725833.jpg?t=st=1725037124~exp=1725040724~hmac=7d478091a5c3ad3b007a78992b2a15f10ed4828e081f9c6d864810131399912a&w=1380');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: table;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: table;
+    height: 100%;
+    text-align:center;
+    background-color: rgba(0,0,0,0.4);
+    animation: banner-in 2s ;
+}
+
+.banner__container {
+    display: table-cell;
+    vertical-align: middle;
+}
+.banner__title {
+    font-size: 56px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    animation: opacity 3s;
+}
+
+.banner__text {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 50px;
+    animation: opacity 3s;
+
+}
+
+@media screen and (max-width:991px){
+  .sect{
+    padding:80px 0;
+  }
+   .banner__title {
+    font-size: 50px;
+  }
+  .row--margin {
+    margin-top: 45px;
+}
+}
+
+.navbar{
+        background-color: #d46a1a;
+        overflow: hidden;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        font-family: 'Nunito', sans-serif;
+    }
+    .navbar a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    .navbar a hover{
+        background-color: rgb(0, 0, 0);
+        color: black;
+    }
+
+    .play-button {
+  background-color: #ec792d;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s; 
+}
+
+.play-button:hover {
+  transform: translateY(-10px); 
+  background-color: #d46a1a; 
+}
